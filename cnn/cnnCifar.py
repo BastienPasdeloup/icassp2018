@@ -123,15 +123,13 @@ model.add(Dense(nbClasses, activation="softmax"))
 
 # First 150 epochs with learning rate of 0.001
 model.compile(loss="categorical_crossentropy", optimizer=Adam(lr=0.001, decay=1e-6), metrics=["accuracy"])
-
 model.summary()
-
 model.fit(X_train / 255.0, to_categorical(Y_train), batch_size=32, shuffle=True, epochs=150, validation_data=(X_test / 255.0, to_categorical(Y_test)), verbose=1)
 
 # Next 75 epochs with learning rate of 0.0001
-model.compile(loss="categorical_crossentropy", optimizer=Adam(lr=0.0001, decay=1e-6), metrics=["accuracy"])
-model.fit(X_train / 255.0, to_categorical(Y_train), batch_size=32, shuffle=True, epochs=75, validation_data=(X_test / 255.0, to_categorical(Y_test)), verbose=1)
+#model.compile(loss="categorical_crossentropy", optimizer=Adam(lr=0.0001, decay=1e-6), metrics=["accuracy"])
+#model.fit(X_train / 255.0, to_categorical(Y_train), batch_size=32, shuffle=True, epochs=75, validation_data=(X_test / 255.0, to_categorical(Y_test)), verbose=1)
 
 # Final 75 epochs with learning rate of 0.00001
-model.compile(loss="categorical_crossentropy", optimizer=Adam(lr=0.00001, decay=1e-6), metrics=["accuracy"])
-model.fit(X_train / 255.0, to_categorical(Y_train), batch_size=32, shuffle=True, epochs=75, validation_data=(X_test / 255.0, to_categorical(Y_test)), verbose=1)
+#model.compile(loss="categorical_crossentropy", optimizer=Adam(lr=0.00001, decay=1e-6), metrics=["accuracy"])
+#model.fit(X_train / 255.0, to_categorical(Y_train), batch_size=32, shuffle=True, epochs=75, validation_data=(X_test / 255.0, to_categorical(Y_test)), verbose=1)
