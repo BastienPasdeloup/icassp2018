@@ -84,16 +84,10 @@ class TernaryLayer(Layer):
         assert len(input_shape) == 3
         self.n = input_shape[1]
         self.p = input_shape[2]
-        #self.check_requirements()
         self.init_scheme()
         self.init_kernel()
         self.init_biases()
         self.built = True
-
-    def check_requirements(self):
-        if 1. / self.w < 1. / (float(self.p) * self.q) + 1. / (float(self.n) * self.m):
-            raise RuntimeError(
-                'Dimensions of ternary layer ' + self.name + ' does not meet weight sharing requirements')
 
     def init_scheme(self):
         self.scheme = self.add_weight(shape=(self.w, self.n, self.m),
