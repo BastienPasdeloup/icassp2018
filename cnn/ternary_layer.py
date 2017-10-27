@@ -44,8 +44,8 @@ class TernaryLayer(Layer):
 
     def __init__(self, n_weights, n_hidden, output_dim,
 
-                 train_scheme=True,scheme_initializer='he_uniform', scheme_init_scale=1.0,
-                 train_kernel= True, kernel_initializer='he_uniform', kernel_init_scale=1.0,
+                 train_scheme=False, scheme_initializer='he_uniform', scheme_init_scale=1.0,
+                 train_kernel=True, kernel_initializer='he_uniform', kernel_init_scale=1.0,
                  
                  activation=None, use_bias=True, bias_initializer='zeros',
 
