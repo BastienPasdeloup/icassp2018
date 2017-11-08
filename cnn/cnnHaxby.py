@@ -46,7 +46,7 @@ SUBJECT_DIRECTORY = sys.argv[2]
 with open(TRANSLATIONS_FILE, "r") as fileObject :
     fileContents = ast.literal_eval(fileObject.read())
 nbVertices = len(fileContents)
-maxFilterSize = max([value for value in max([list(cnnFilter.values()) for cnnFilter in fileContents])])
+maxFilterSize = max([value for value in [max(list(cnnFilter.values())) for cnnFilter in fileContents]])
 
 # Custom layer using these translations
 S = numpy.zeros((maxFilterSize, nbVertices, nbVertices))
